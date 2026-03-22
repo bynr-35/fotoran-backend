@@ -1,3 +1,6 @@
+app.get("/", (req, res) => {
+  res.send("Fotoran API çalışıyor 🚀");
+});
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
@@ -11,7 +14,7 @@ app.post("/ai", async (req, res) => {
 
   try {
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyDbVogn11YWZbWty_nOzLKAS0DULAW1mHM,
+      "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyAdRKFRxASwAo0rFk2B-gINevOok_eL_hs,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
