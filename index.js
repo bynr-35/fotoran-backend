@@ -18,15 +18,15 @@ app.post("/ai", async (req, res) => {
 
   try {
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyDgJg-mhNxNkj-MpO1dSGI8T45mAFDpins"
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: userText }] }]
-        })
-      }
-    );
+  "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=AIzaSyXXXXXXXX",
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: userText }] }]
+    })
+  }
+);
 
     const data = await response.json();
     res.json(data);
