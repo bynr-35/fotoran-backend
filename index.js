@@ -1,20 +1,24 @@
-app.get("/", (req, res) => {
-  res.send("Fotoran API çalışıyor 🚀");
-});
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
+// ANA SAYFA
+app.get("/", (req, res) => {
+  res.send("Fotoran API çalışıyor 🚀");
+});
+
+// AI ENDPOINT
 app.post("/ai", async (req, res) => {
   const userText = req.body.text;
 
   try {
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyAdRKFRxASwAo0rFk2B-gINevOok_eL_hs,
+      "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=AIzaSyDvy4JI-kRVVxJI-Yz_fNv-3cf8YxtRj28,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -26,10 +30,10 @@ app.post("/ai", async (req, res) => {
 
     const data = await response.json();
     res.json(data);
+
   } catch (err) {
     res.status(500).json({ error: "Hata oluştu" });
   }
 });
 
 app.listen(3000, () => console.log("Server çalışıyor"));
-// update
